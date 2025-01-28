@@ -1,0 +1,286 @@
+.container{
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 10px;
+}
+
+.bg-home{
+    position: relative;
+}
+
+.bg-home::before{
+    content: '';
+    display: block;
+    position: absolute;
+    background-image: linear-gradient(to bottom, rgba(6, 18, 30, 0.1 ), #DFA9C6), url("../assets/image/fundo_bg-home.png");
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background-size: cover;
+    background-repeat: no-repeat;
+    opacity: 0.9;
+
+}
+
+.hero {
+    color: $black-normal;
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 14px;
+
+    h1{
+        text-align: center;
+        line-height: 100%;
+        max-width: 940px;
+        font-size: 38px;
+    }
+
+    p{
+        text-align: center;
+        margin: 14px 0;
+    }
+
+}
+
+.button-contact{
+    padding: 14px 28px;
+    color: $white-normal;
+    background-color: $primary-pink-dark;
+    border: 0;
+    font-size: 18px;
+    font-weight: 600;
+    margin: 14px 0;
+}
+
+.button-contact:hover{
+    animation: scaleButton 0.8s alternate infinite;
+    color: $primary-pink-dark;
+    background-color: $white-normal;
+}
+
+@keyframes scaleButton{
+    from{
+        transform: scale(1);
+    }
+    to{
+        transform: scale(1.07);
+    }
+}
+
+@media screen and (max-width:760px){
+    .hero{
+        min-height: 60vh;
+
+        h1{
+            font-size: 34px;
+            padding: 0 14px;
+            width: 100%;
+        }
+
+        p{
+            font-size: 14px;
+        }
+    }
+}
+
+.choice{
+    overflow: hidden;
+    text-align: center;
+    h1{
+        font-size: 30px;
+    }
+}
+
+.choice-content{
+    margin-top: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    padding: 34px 14px 64px 14px;
+}
+
+.choice-content div{
+    flex: 1;
+
+    h3{
+        font-size: 20px;
+        margin-bottom: 24px;
+    
+    }
+
+    p{
+        font-size: 15px;
+        margin-bottom: 14px;
+        line-height: 150%;
+    }
+}
+
+@media screen and (max-width:400px){
+
+    .choice-content div h3{
+        font-size: 12px;
+    }
+
+    .choice-content div p{
+        font-size: 10px;
+    }
+    
+}
+
+.about{
+    padding: 40px 20px;
+    color: $black-normal;
+}
+
+.about-content {
+    flex-wrap: wrap;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+    padding: 34px 14px 64px 14px;
+    max-width: 1200px;
+    margin: 0 auto;
+
+    img{
+        max-width: 300px;
+    }
+}
+
+@media screen and (max-width:750px){
+    .about-content{
+        flex-direction: column;
+    }
+    
+}
+
+.about-content div{
+    flex: 1;
+}
+
+.about-description {
+    flex: 1 1 60%;
+    text-align: center;
+    h1{
+        font-size: 38px;
+        margin-bottom: 10px;
+        text-align: center;
+    }
+
+    p{
+        margin-bottom: 14px;
+        line-height: 150%;
+        text-align: center;
+    }
+}
+
+.about-image {
+    flex: 1 1 35%;
+    text-align: center;
+}
+
+.location{
+    font-size: 28px;
+    text-align: center;
+    background-color: $primary-pink-dark;
+}
+
+.footer{
+    background-color: $primary-pink-dark;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 0;
+}
+
+.copy {
+    color: $white-normal;
+    display: flex;
+    gap: 14px;
+    margin-top: 10px;
+
+    a{
+        color: $white-normal;
+        font-size: 12px;
+    }
+}
+
+.copy a:hover{
+    animation: translateY 0.8s infinite alternate;
+    
+}
+
+.footer-icons{
+    color: $black-normal;
+    display:flex;
+    gap: 25px;
+
+    a{
+        color: $black-normal;
+    }
+}
+.footer-icons a:hover{
+    i{
+        animation: translateY 0.8s infinite alternate;
+        color: $white-dark;
+    }
+}
+
+@media screen and (max-width:653){
+    .copy {
+        font-size: 10px;
+    }
+}
+
+.btn-whatssap{
+    position: fixed;
+    bottom: 14px;
+    right: 24px;
+    z-index: 99;
+
+    img{
+        max-width: 74px;
+        transition: transform 0.4s;
+
+    }
+
+    img:hover{
+        transform: scale(1.1);
+    }
+}
+
+.btn-whatssap .tooltip{
+    visibility: hidden;
+    position: absolute;
+    width: 120px;
+    top: 8px;
+    left: -144px;
+    text-align: center;
+    background-color: $black-normal;
+    opacity: 0;
+    transition: opacity 0.3s;
+    padding: 4px;
+    border-radius: 8px;
+    color: $white-normal;
+}
+
+.btn-whatssap:hover .tooltip{
+    visibility: visible;
+    opacity: 1;
+}
+
+@media screen and (max-width: 760px){
+    .btn-whatssap{
+        img{
+            max-width: 50px;
+        }
+    }
+    
+}
